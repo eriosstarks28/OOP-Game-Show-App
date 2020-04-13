@@ -11,7 +11,7 @@ startBtn.addEventListener("click", () => {
   //enable keyboard and reset class names 
 
   const [...keyboard] = document.querySelectorAll(".keyrow button");
-  console.log(keyboard);
+  
 
   keyboard.forEach((key) => {
     key.className = "key";
