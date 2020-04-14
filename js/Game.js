@@ -2,14 +2,14 @@ class Game {
   constructor() {
     this.missed = 0;
     this.phrases = [
-      "Die with memories not dreams",
-      "Simplicity is the ultimate sophistication",
-      "Whatever you do do it well",
-      "All limitations are self imposed",
-      "Problems are not stop signs they are guidelines",
+      new Phrase("Die with memories not dreams"),
+      new Phrase("Simplicity is the ultimate sophistication"),
+      new Phrase("Whatever you do do it well"),
+      new Phrase("All limitations are self imposed"),
+      new Phrase("Problems are not stop signs they are guidelines"),
     ];
 
-    this.activePhrase = `null`;
+    this.activePhrase = null;
   }
 
   startGame() {
@@ -19,7 +19,7 @@ class Game {
 
     // get a random phrase and display it to the screen
     const phrase = this.getRandomPhrase();
-    this.activePhrase = new Phrase(phrase);
+    this.activePhrase = phrase;
     this.activePhrase.addPhraseToDisplay();
   }
 
@@ -81,7 +81,7 @@ class Game {
   gameOver() {
     const overlay = document.getElementById("overlay");
     // show the overlay screen
-    overlay.style.display = "block";
+    overlay.style.display = "inherit";
     let gameOverMessage = "";
 
     // check if the user has won or lost the game
